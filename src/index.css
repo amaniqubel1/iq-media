@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600&family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Georgia", serif;
+  --font-serif: "Bodoni Moda", serif;
+  --font-sans: "Helvetica Neue", "Inter", sans-serif;
+
+  --color-gold-400: #C5A059;
+  --color-gold-500: #b38d4a;
+  --color-background: #050505;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white antialiased;
+    background: radial-gradient(circle at 70% 30%, #1a150e 0%, #050505 100%);
+  }
+}
+
+.glass {
+  @apply bg-white/2 backdrop-blur-md border border-gold-400/15;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #dbbb82 50%, #C5A059 100%);
+}
+
+.gold-text-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #C5A059, #f5eedf, #C5A059);
+}
+
+.guarantee-gradient {
+  background: linear-gradient(90deg, rgba(197, 160, 89, 0.1) 0%, rgba(5, 5, 5, 0) 100%);
+}
+
+.luxury-shadow {
+  box-shadow: 0 10px 50px -12px rgba(197, 160, 89, 0.1);
+}
