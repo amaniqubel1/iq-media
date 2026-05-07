@@ -487,50 +487,67 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <motion.form
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="glass p-8 md:p-12 rounded-[2rem] space-y-6"
-        >
-          <div className="space-y-4">
-            <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Full Name</label>
-            <input 
-              type="text" 
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light" 
-              placeholder="e.g. Johnathan Smith"
-            />
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          className="glass p-8 md:p-12 rounded-[2rem]"
+        > 
+          <form
+            action="https://formsubmit.co/aman.iqmedia@gmail.com"
+            method="POST"
+            className="space-y-6"
+          >
+            {/* Disables captcha for smoother user experience */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Inquiry from IQ Media" />
+
             <div className="space-y-4">
-              <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Business Name</label>
+              <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Full Name</label>
               <input 
                 type="text" 
+                name="name"
+                required
                 className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light" 
-                placeholder="Your Company"
+                placeholder="e.g. Johnathan Smith"
               />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Business Name</label>
+                <input 
+                  type="text" 
+                  name="business"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light" 
+                  placeholder="Your Company"
+                />
+              </div>
+              <div className="space-y-4">
+                <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Email Address</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  required
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light" 
+                  placeholder="john@example.com"
+                />
+              </div>
             </div>
             <div className="space-y-4">
-              <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Email Address</label>
-              <input 
-                type="email" 
-                className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light" 
-                placeholder="john@example.com"
+              <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Growth Goal / Challenge</label>
+              <textarea 
+                name="message"
+                required
+                rows={4}
+                className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light resize-none" 
+                placeholder="Tell us about where you want to go..."
               />
             </div>
-          </div>
-          <div className="space-y-4">
-            <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold-400">Growth Goal / Challenge</label>
-            <textarea 
-              rows={4}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:border-gold-400 outline-none transition-all font-light resize-none" 
-              placeholder="Tell us about where you want to go..."
-            />
-          </div>
-          <button className="w-full py-5 bg-gold-400 text-black font-bold uppercase tracking-[0.2em] text-xs rounded-xl hover:bg-gold-500 transition-all luxury-shadow">
-            Submit Inquiry
-          </button>
-        </motion.form>
+            <button type="submit" className="w-full py-5 bg-gold-400 text-black font-bold uppercase tracking-[0.2em] text-xs rounded-xl hover:bg-gold-500 transition-all luxury-shadow">
+              Submit Inquiry
+            </button>
+          </form>
+        </motion.div>
       </div>
     </Section>
   );
